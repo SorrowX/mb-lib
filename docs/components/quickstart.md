@@ -1,4 +1,4 @@
-## 快速上手
+# 快速上手
 
 通过本章节你可以了解到 MbLibUI 的安装方法和基本使用姿势.
 
@@ -87,3 +87,7 @@ Vue.use(MbPopup)
 ::: warning
 由于大多数情况下,我们项目都是用 webpack 或者 vite 来构建。所以 MbLibUI 库不提供 iife/cjs/amd/umd/system 模式的库文件,只提供 es 版库文件。
 :::
+
+## Vant 安装
+
+[有关 Vant 的安装教程,可以参考这里](https://vant-contrib.gitee.io/vant/v2/#/zh-CN/quickstart#an-zhuang)

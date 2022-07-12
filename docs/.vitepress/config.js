@@ -1,13 +1,12 @@
 module.exports = {
   title: 'MbLibUI',
-  description: 'Just playing around.',
+  description: 'A Vue2 UI Components library.',
   lastUpdated: true,
   markdown: {},
   themeConfig: {
     nav: nav(),
 
     sidebar: {
-      // '/guide/': sidebarGuide(),
       '/components/': sidebarConfig(),
     },
 
@@ -30,7 +29,6 @@ module.exports = {
 
 function nav() {
   return [
-    // { text: '指南', link: '/guide/what-is-vitepress', activeMatch: '/guide/' },
     {
       text: '组件',
       link: '/components/introduction',
@@ -50,76 +48,35 @@ function sidebarConfig() {
       items: [
         { text: '介绍', link: '/components/introduction' },
         { text: '快速上手', link: '/components/quickstart' },
-        { text: '主题定制', link: '/components/theme-configs' },
+        { text: '主题定制', link: '/components/theme' },
         {
           text: '国际化',
-          link: '/components/frontmatter-configs',
+          link: '/components/locale',
         },
       ],
     },
     {
-      text: '业务组件',
+      text: '基础组件',
       items: [
-        { text: '下拉选择', link: '/components/introduction' },
-        { text: '上拉刷新', link: '/components/app-configs' },
-        { text: '弹出框', link: '/components/theme-configs' },
-      ],
-    },
-  ]
-}
-
-function sidebarGuide() {
-  return [
-    {
-      text: 'Introduction',
-      collapsible: true,
-      items: [
-        { text: 'What is VitePress?', link: '/guide/what-is-vitepress' },
-        { text: 'Getting Started', link: '/guide/getting-started' },
-        { text: 'Configuration', link: '/guide/configuration' },
-        { text: 'Deploying', link: '/guide/deploying' },
+        { text: 'Layout 布局', link: '/components/todo' },
+        { text: 'Button 按钮', link: '/components/todo' },
+        { text: 'Search 搜索', link: '/components/todo' },
+        { text: 'Toast 轻提示', link: '/components/todo' },
+        { text: 'Popup 弹出层', link: '/components/todo' },
+        { text: 'List 列表', link: '/components/todo' },
+        { text: 'PullRefresh 下拉刷新', link: '/components/todo' },
+        { text: 'Dialog 弹出框', link: '/components/todo' },
       ],
     },
     {
-      text: 'Writing',
-      collapsible: true,
+      text: '表单组件',
       items: [
-        { text: 'Markdown', link: '/guide/markdown' },
-        { text: 'Asset Handling', link: '/guide/asset-handling' },
-        { text: 'Frontmatter', link: '/guide/frontmatter' },
-        { text: 'Using Vue in Markdown', link: '/guide/using-vue' },
-        { text: 'API Reference', link: '/guide/api' },
-      ],
-    },
-    {
-      text: 'Theme',
-      collapsible: true,
-      items: [
-        { text: 'Introduction', link: '/guide/theme-introduction' },
-        { text: 'Nav', link: '/guide/theme-nav' },
-        { text: 'Sidebar', link: '/guide/theme-sidebar' },
-        { text: 'Prev Next Link', link: '/guide/theme-prev-next-link' },
-        { text: 'Edit Link', link: '/guide/theme-edit-link' },
-        { text: 'Last Updated', link: '/guide/theme-last-updated' },
-        { text: 'Layout', link: '/guide/theme-layout' },
-        { text: 'Homepage', link: '/guide/theme-homepage' },
-        { text: 'Footer', link: '/guide/theme-footer' },
-        { text: 'Search', link: '/guide/theme-search' },
-        { text: 'Carbon Ads', link: '/guide/theme-carbon-ads' },
-      ],
-    },
-    {
-      text: 'Migrations',
-      collapsible: true,
-      items: [
-        {
-          text: 'Migration from VuePress',
-          link: '/guide/migration-from-vuepress',
-        },
-        {
-          text: 'Migration from VitePress 0.x',
-          link: '/guide/migration-from-vitepress-0',
-        },
+        { text: 'Select 列表选择', link: '/components/todo' },
+        { text: 'Calendar 日历', link: '/components/todo' },
+        { text: 'DatetimePicker 时间选择', link: '/components/todo' },
+        { text: 'Tree 树型选择', link: '/components/todo' },
+        { text: 'Form 表单', link: '/components/todo' },
+        { text: 'FormWidgets 表单控件', link: '/components/todo' },
       ],
     },
   ]
