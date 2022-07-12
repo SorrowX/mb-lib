@@ -1,11 +1,10 @@
 import Vue from 'vue'
-import { MbPopup } from '@/components/index.js'
-// import '../lib/index.full/style.css'
-// import { MbTest } from '../lib/index.full/mb-lib.full.es.js'
+import MbLibUI from '@/components/index.js'
+
+Vue.use(MbLibUI)
 
 new Vue({
   render(h) {
-    // return h('div', [h(MbList), h(MbTree)])
-    return h('div', [h(MbPopup)])
+    return h('div', [h('mb-popup')])
   },
 }).$mount('#app')

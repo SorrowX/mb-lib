@@ -6,7 +6,7 @@
     "lib",
     "packages"
   ],
-  "main": "lib/index.full",
+  "main": "lib/index.full/mb-lib.full.es.js",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },

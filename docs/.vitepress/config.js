@@ -49,7 +49,7 @@ function sidebarConfig() {
       text: '开发指南',
       items: [
         { text: '介绍', link: '/components/introduction' },
-        { text: '快速上手', link: '/components/app-configs' },
+        { text: '快速上手', link: '/components/quickstart' },
         { text: '主题定制', link: '/components/theme-configs' },
         {
           text: '国际化',

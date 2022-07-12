@@ -19,8 +19,8 @@ import Popup from 'vant/lib/popup'
 import { createNamespace } from '@/utils/create/index'
 const [createComponent, bem, t] = createNamespace('popup')
 
-const comp = createComponent({
-  name: 'MbTest2',
+export default createComponent({
+  name: 'MbPopup',
   components: {
     VanPopup: Popup,
   },
@@ -32,8 +32,4 @@ const comp = createComponent({
     }
   },
 })
-
-console.log(123, comp)
-
-export default comp
 </script>
