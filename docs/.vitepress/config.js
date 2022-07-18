@@ -11,7 +11,7 @@ module.exports = {
     },
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/vuejs/vitepress' },
+      { icon: 'github', link: 'https://github.com/SorrowX/mb-lib' },
     ],
 
     footer: {
@@ -36,7 +36,7 @@ function nav() {
     },
     {
       text: '日志',
-      link: 'https://github.com/vuejs/vitepress/blob/main/CHANGELOG.md',
+      link: 'https://github.com/SorrowX/mb-lib/commits/main',
     },
   ]
 }

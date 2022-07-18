@@ -1,3 +1,5 @@
+import 'vant/lib/index.less'
+
 import Vue from 'vue'
 import MbLibUI from '@/components/index.js'
 

@@ -23,8 +23,8 @@ import { Locale } from 'mb-lib-ui'
 
 const messages = {
   'zh-CN': {
-    test: {
-      confirm: '测试Test属性值', // 将'测试'修改为'测试Test属性值'
+    mbPopup: {
+      test: '测试Test属性值', // 将'测试'修改为'测试Test属性值'
     },
   },
 }
@@ -40,18 +40,16 @@ Locale.add(messages)
 import Vue from 'vue'
 
 // MbPopup组件包含Vant的popup组件源代码
-import 'mb-lib-ui/lib/components/popup/full/style.css'
-import MbPopup, {
-  Locale,
-} from 'mb-lib-ui/lib/components/popup/full/index.full.es.js'
+import 'mb-lib-ui/packages/theme-chalk/popup/index.less'
+import MbPopup, { Locale } from 'mb-lib-ui/lib/components/popup/index.js'
 
 Vue.use(MbPopup)
 
 // 语言值覆盖
 const messages = {
   'zh-CN': {
-    test: {
-      confirm: '测试Test属性值', // 将'测试'修改为'测试Test属性值'
+    mbPopup: {
+      test: '测试Test属性值', // 将'测试'修改为'测试Test属性值'
     },
   },
 }

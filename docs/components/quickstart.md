@@ -4,7 +4,7 @@
 
 ## 安装
 
-在现有项目中使用 MbLibUI 时, 可以通过 yarn 或 npm 进行安装:
+可以通过 yarn 或 npm 进行安装:
 
 ```js
 yarn add mb-lib-ui -S
@@ -12,80 +12,125 @@ or
 npm install mb-lib-ui -S
 ```
 
-## 引入组件
-
-::: tip
-组件引入可以分为 "全量引入" 和 "按需引入"。
-
-全量引入和按需引入中又可分为完整和纯净 js, css 文件引入。
-
-完整: 因为 MbLibUI 是基于 Vant 进行二次开发,使用完整版 js, css 文件，将包含 Vant 对应的组件代码和样式。
-
-纯净: 将排除 Vant 的源代码，只有 MbLibUI 组件的源代码和样式,适用于项目中引入过 Vant 库。
-:::
-
 ### 方式一. 全量引入组件
 
-I. 如果你的项目没有使用 vant 库, 你想全量引入所有组件, 如下操作:
+I. 全量引入, 如下操作:
 
 ```js
 import Vue from 'vue'
-// MbLibUI js和css文件包含对应的Vant组件源代码和样式
-import 'mb-lib-ui/lib/index.full/style.css'
+
+import 'vant/lib/index.css'
+import 'mb-lib-ui/lib/style.css'
 import MbLibUI from 'mb-lib-ui'
 
 Vue.use(MbLibUI)
 ```
 
-II. 如果你的项目已经在使用 vant 库, 你想全量引入所有组件, 如下操作:
+II. 全量引入 + 自定义主题, 如下操作:
 
 ```js
+// main.js
 import Vue from 'vue'
 
-// 需引入Vant
-import 'vant/lib/index.css'
-import Vant from 'vant'
-// MbLibUI js和css文件只包含自身的源代码和样式
-import 'mb-lib-ui/lib/index.pure/style.css'
-import MbLibUI from 'mb-lib-ui/lib/index.pure/mb-lib.pure.es.js'
+import 'vant/lib/index.less';
+import 'mb-lib-ui/packages/theme-chalk/index.less'
+import MbLibUI from 'mb-lib-ui'
 
-Vue.use(Vant)
 Vue.use(MbLibUI)
+
+// vite.config.js
+import { defineConfig } from 'vite'
+export default defineConfig({
+  return {
+    resolve: {
+      alias: {
+        '~@vant': '@vant',
+      },
+    },
+    css: {
+      preprocessorOptions: {
+        less: {
+          modifyVars: {
+            // 这里定义 css 变量
+            "@green": "#f60",
+
+            // 或者使用 less文件 来定义变量
+            hack: `true; @import "./var.less";`,
+          },
+        },
+      },
+    },
+  }
+})
+
+// var.less
+@green: "#f60";
+
+// 其他配置文件参考主题定制
 ```
 
 ### 方式二. 手动按需引入组件
 
-I. 如果你的项目没有使用 vant 库, 你可以手动引入需要的组件, 比如 popup 组件, 如下操作:
+I. 按需引入(比如 popup 组件), 如下操作:
 
 ```js
 import Vue from 'vue'
 
-// MbPopup组件包含Vant的popup组件源代码
-import 'mb-lib-ui/lib/components/popup/full/style.css'
-import MbPopup from 'mb-lib-ui/lib/components/popup/full/index.full.es.js'
+import 'vant/lib/popup/style/less'
+import 'mb-lib-ui/packages/theme-chalk/popup/index.less'
+import MbPopup from 'mb-lib-ui/lib/components/popup/index.js'
 
 Vue.use(MbPopup)
 ```
 
-II. 如果你的项目已经在使用 vant 库, 你可以手动引入需要的组件, 比如 popup 组件, 如下操作:
+II. 按需引入(比如 popup 组件) + 自定义主题, 如下操作:
 
 ```js
+// main.js
 import Vue from 'vue'
 
-// 需引入Vant(或者部分Vant组件)
-import 'vant/lib/index.css'
-import Vant from 'vant'
+import 'vant/lib/popup/style/less'
+import 'mb-lib-ui/packages/theme-chalk/popup/index.less'
+import MbPopup from 'mb-lib-ui/lib/components/popup/index.js'
 
-// MbPopup组件不包含Vant的popup组件源代码
-import 'mb-lib-ui/lib/components/popup/pure/style.css'
-import MbPopup from 'mb-lib-ui/lib/components/popup/pure/index.pure.es.js'
-
-Vue.use(Vant)
 Vue.use(MbPopup)
+
+// vite.config.js
+import { defineConfig } from 'vite'
+
+export default defineConfig({
+  return {
+    resolve: {
+      alias: {
+        '~@vant': '@vant',
+      },
+    },
+    css: {
+      preprocessorOptions: {
+        less: {
+          modifyVars: {
+            // 这里定义 css 变量
+            "@green": "#f60",
+
+            // 或者使用 less文件 来定义变量
+            hack: `true; @import "./var.less";`,
+          },
+        },
+      },
+    },
+  }
+})
+
+// var.less
+@green: "#f60";
+
+// 其他配置文件参考主题定制
 ```
 
 ::: warning
-由于大多数情况下,我们项目都是用 webpack 或者 vite 来构建。所以 MbLibUI 库不提供 iife/cjs/amd/umd/system 模式的库文件,只提供 es 版库文件。
+
+由于大多数情况下,我们项目都是用 Webpack 或者 Vite 来构建。所以 MbLibUI 库不提供 iife/cjs/amd/umd/system 模式的库文件,只提供 es 版库文件。
+
 :::
 
 ## Vant 安装

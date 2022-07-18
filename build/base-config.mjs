@@ -1,10 +1,12 @@
 import { createVuePlugin } from 'vite-plugin-vue2'
 
 export default function getBaseConfig(isFullMode) {
+  isFullMode = isFullMode || false
   return {
     resolve: {
       alias: {
         '@': '/packages',
+        '~@vant': '@vant',
       },
     },
     css: {
@@ -12,6 +14,14 @@ export default function getBaseConfig(isFullMode) {
         less: {
           modifyVars: {
             hack: `true; @import "@/theme-chalk/var.less";`,
+          },
+          importer(url) {
+            console.log('isFullMode: ', isFullMode, url)
+            if (!isFullMode && /vant/.test(url)) {
+              return {
+                contents: '',
+              }
+            }
           },
         },
         scss: {

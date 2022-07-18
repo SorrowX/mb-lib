@@ -19,17 +19,13 @@ const componentsDirNames = getDirNames(COMPONENTS_PATH)
 const opts = componentsDirNames.reduce((pre, dirName) => {
   const entry = resolve(`${COMPONENTS_PATH}/${dirName}/index.js`)
   const outDir = resolve(`lib/components/${dirName}`)
-  pre.push(
-    { entry, outDir: outDir + `/full`, mode: 'full' },
-    { entry, outDir: outDir + `/pure`, mode: 'pure' }
-  )
+  pre.push({ entry, outDir: outDir })
   return pre
 }, [])
 
 const getBuildOptions = (optopns) => {
-  const { outDir, entry, mode } = optopns
-  const isFullMode = mode === 'full' ? true : false
-  const baseConfig = getBaseConfig(isFullMode)
+  const { outDir, entry } = optopns
+  const baseConfig = getBaseConfig()
 
   return mergeConfig(baseConfig, {
     configFile: false,
@@ -41,9 +37,7 @@ const getBuildOptions = (optopns) => {
       lib: {
         entry,
         formats: ['es'],
-        fileName: (format) => {
-          return `index.${mode}.${format}.js`
-        },
+        fileName: (format) => `index.js`,
       },
     },
   })

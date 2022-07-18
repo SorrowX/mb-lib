@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="mb-popup">
     <button type="primary" @click="show = !show">{{ test }}</button>
     <p>{{ bem() }}</p>
     <p>{{ bem('test') }}</p>
@@ -12,11 +12,6 @@
 </template>
 
 <script>
-import '@/theme-chalk/popup/index.less'
-import 'vant/lib/overlay/index.less'
-import 'vant/lib/popup/index.less'
-import 'vant/lib/button/index.less'
-
 import Popup from 'vant/lib/popup'
 import Button from 'vant/lib/button'
 import { createNamespace } from '@/utils/create/index'

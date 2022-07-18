@@ -1,16 +1,31 @@
 # 主题定制
 
-MbLibUI 继承了 Vant 的默认主题并遵循 BEM 命名规范。如果你想完全替换主题色或者其他样式，可以按照本文档进行主题定制。
+MbLibUI 默认使用 OPPO 绿 作为默认主题并遵循 BEM 命名规范。如果你想完全替换主题色或者其他样式，可以按照本文档进行主题定制。
 
 ## 定制方法
 
+::: tip
+
+Vite 环境下, 需要安装 less:
+
+```js
+npm install less --save-dev
+```
+
+Vue-Cli 或者 Webpack 环境下, 需要安装 less 和 less-loader:
+
+```js
+npm install less less-loader --save-dev
+```
+
+:::
+
 #### 步骤一: 新建一个 less 文件
 
-在你的项目中新建一个 less 文件,比如 var.less, 里面可以写入主题变量覆盖。由于 vant 内部使用的是 less 预处理器，为了统一,MbLibUI 样式开发也使用 less 预处理器
+在你的项目中新建一个 less 文件, 比如 var.less, 里面可以写入 [主题变量](https://github.com/youzan/vant/blob/2.x/src/style/var.less) 覆盖。
 
 ```css
-// 覆盖MbLibUI主题变量
-@import 'mb-lib-ui/packages/theme-chalk/var.less';
+// var.less
 
 // Color Palette （具体可以参考下文的 Vant 主题变量）
 @black: #000;
@@ -41,6 +56,11 @@ import { defineConfig } from 'vite'
 
 export default defineConfig({
   return {
+    resolve: {
+      alias: {
+        '~@vant': '@vant',
+      },
+    },
     css: {
       preprocessorOptions: {
         less: {
@@ -63,7 +83,8 @@ module.exports = {
   css: {
     loaderOptions: {
       less: {
-        // 若 less-loader 版本小于 6.0，请移除 lessOptions 这一级，直接配置选项。
+        // 若 less-loader 版本小于 6.0，请移除 lessOptions 这一级，
+        // 直接配置选项。
         lessOptions: {
           modifyVars: {
             // 直接覆盖变量
@@ -92,7 +113,8 @@ module.exports = {
         {
           loader: 'less-loader',
           options: {
-            // 若 less-loader 版本小于 6.0，请移除 lessOptions 这一级，直接配置选项。
+            // 若 less-loader 版本小于 6.0，请移除 lessOptions 这一级，
+            // 直接配置选项。
             lessOptions: {
               modifyVars: {
                 // 直接覆盖变量

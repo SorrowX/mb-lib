@@ -1,3 +1,4 @@
+import '@/theme-chalk/index.less'
 import Locale from '@/locale'
 import MbPopup from './popup/index.js'
 
@@ -24,3 +25,4 @@ const MbLibUI = {
 }
 
 export default MbLibUI
+export { Locale }
