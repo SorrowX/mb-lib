@@ -1,18 +1,3 @@
-<template>
-  <div class="vp-demo">
-    <vp-example ref="exampleRef" />
-
-    <van-collapse v-model="activeNames">
-      <van-collapse-item name="1">
-        <template #title>
-          <div class="vp-demo__title">Source</div>
-        </template>
-        <vp-source-code :source="rawSource" />
-      </van-collapse-item>
-    </van-collapse>
-  </div>
-</template>
-
 <script>
 import { ref, onMounted } from 'vue'
 import VpExample from './vp-example.vue'
@@ -52,12 +37,27 @@ export default {
 }
 </script>
 
+<template>
+  <div class="vp-demo">
+    <vp-example ref="exampleRef" />
+
+    <van-collapse v-model="activeNames">
+      <van-collapse-item name="1">
+        <template #title>
+          <div class="vp-demo__title">Source</div>
+        </template>
+        <vp-source-code :source="rawSource" />
+      </van-collapse-item>
+    </van-collapse>
+  </div>
+</template>
+
 <style lang="less">
 .vp-demo {
   border: 1px solid #dcdfe6;
   border-radius: 4px;
   margin: 16px 0;
-  .vp-demo__title {
+  &__title {
     display: flex;
     justify-content: flex-end;
   }

@@ -12,5 +12,18 @@ type CreateNamespaceReturn = [
 
 export function createNamespace(name: string): CreateNamespaceReturn {
   name = 'mb-' + name
-  return [createComponent(name), createBEM(name), createI18N(name)]
+  const bem = createBEM(name)
+  const t = createI18N(name)
+  return [
+    function defineComponent(sfc: any) {
+      const comp = createComponent(name)(sfc)
+      const methods = comp.methods || {}
+      methods.$bem = bem
+      methods.$translate = t
+      comp.methods = methods
+      return comp
+    },
+    bem,
+    t,
+  ]
 }

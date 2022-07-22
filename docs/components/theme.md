@@ -24,6 +24,8 @@ npm install less less-loader --save-dev
 
 在你的项目中新建一个 less 文件, 比如 var.less, 里面可以写入 [主题变量](https://github.com/youzan/vant/blob/2.x/src/style/var.less) 覆盖。
 
+该文件可选，不一定要新建，可以直接在选项中定义变量。
+
 ```css
 // var.less
 
@@ -50,6 +52,8 @@ npm install less less-loader --save-dev
 
 如果 使用 vite 搭建的项目，可以在 vite.config.js 中进行配置。
 
+vite 环境下, 推荐 less 变量直接定义在 modifyVars 中。
+
 ```js
 // vite.config.js
 import { defineConfig } from 'vite'
@@ -65,8 +69,8 @@ export default defineConfig({
       preprocessorOptions: {
         less: {
           modifyVars: {
-            // ./var.less 这是你项目中创建好主题变量文件的具体绝对路径
-            hack: `true; @import "./var.less";`,
+            // 这里定义 css 变量
+            "@green": "#f60",
           },
         },
       },

@@ -37,12 +37,15 @@ export default function getBaseConfig(isFullMode) {
       sourcemap: false,
       rollupOptions: {
         external: isFullMode
-          ? ['vue']
+          ? []
           : (importer) => importer === 'vue' || /vant/.test(importer),
         output: {
           globals: { vue: 'Vue', vant: 'vant' },
         },
       },
+    },
+    server: {
+      host: '0.0.0.0',
     },
     plugins: [createVuePlugin()],
   }

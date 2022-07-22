@@ -1,6 +1,6 @@
 <template>
   <div class="popup-base">
-    <mb-cell title="点我弹出" is-link :value="value" @click="show = !show" />
+    <mb-cell title="基础使用" is-link @click="show = !show" />
     <mb-popup
       v-model="show"
       round
@@ -9,14 +9,6 @@
       position="bottom"
       title="我是标题"
       :style="{ height: '60%' }"
-      @close="(evt) => handleClick('close', evt)"
-      @sure="(evt) => handleClick('sure', evt)"
-      @search="(evt) => handleClick('search', evt)"
-      @search-input="(evt) => handleClick('search-input', evt)"
-      @focus="(evt) => handleClick('focus', evt)"
-      @blur="(evt) => handleClick('blur', evt)"
-      @clear="(evt) => handleClick('clear', evt)"
-      @cancel="(evt) => handleClick('cancel', evt)"
     >
       <div class="popup-base__list">
         <div v-for="num in 20" :key="num" class="popup-base__list-item">
@@ -32,16 +24,8 @@ export default {
   data() {
     return {
       show: false,
-      value: '',
     }
   },
-  methods: {
-    handleClick(evtName, evt) {
-      console.log(evtName, evt)
-      this.value = `Event[${evtName}] ${evt ? ': ' + evt : ''}`
-    },
-  },
-  mounted() {},
 }
 </script>
 

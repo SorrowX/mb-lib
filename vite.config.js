@@ -4,6 +4,7 @@ import getBaseConfig from './build/base-config.mjs'
 
 export default defineConfig(({ command, mode }) => {
   console.log(command, mode)
+  // const isFullMode = mode === 'full'
   const baseConfig = getBaseConfig()
 
   return mergeConfig(baseConfig, {

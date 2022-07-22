@@ -1,5 +1,36 @@
 @import '../var.less';
 
-.mb-popup {
-  color: #f60;
+.mb {
+  &-popup {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    &__header {
+      height: 56px;
+      display: flex;
+      flex: none;
+      align-items: center;
+      font-size: 16px;
+      &-left {
+        padding: 0 16px;
+        flex: none;
+      }
+      &-center {
+        flex: 1;
+        font-weight: 500;
+        text-align: center;
+        color: rgba(0, 0, 0, 0.85);
+      }
+      &-right {
+        padding: 0 16px;
+        flex: none;
+        font-weight: 400;
+        color: @green;
+      }
+    }
+    &__content {
+      flex: 1;
+      overflow: hidden;
+    }
+  }
 }

@@ -12,6 +12,16 @@ or
 npm install mb-lib-ui -S
 ```
 
+## 升级
+
+可以通过 yarn 或 npm 进行升级安装:
+
+```js
+yarn upgrade mb-lib-ui --latest
+or
+npm update mb-lib-ui
+```
+
 ### 方式一. 全量引入组件
 
 I. 全量引入, 如下操作:
@@ -52,19 +62,13 @@ export default defineConfig({
         less: {
           modifyVars: {
             // 这里定义 css 变量
-            "@green": "#f60",
-
-            // 或者使用 less文件 来定义变量
-            hack: `true; @import "./var.less";`,
+            "@green": "#f60"
           },
         },
       },
     },
   }
 })
-
-// var.less
-@green: "#f60";
 
 // 其他配置文件参考主题定制
 ```
@@ -76,7 +80,7 @@ I. 按需引入(比如 popup 组件), 如下操作:
 ```js
 import Vue from 'vue'
 
-import 'vant/lib/popup/style/less'
+import 'vant/es/popup/style/less'
 import 'mb-lib-ui/packages/theme-chalk/popup/index.less'
 import MbPopup from 'mb-lib-ui/lib/components/popup/index.js'
 
@@ -89,7 +93,7 @@ II. 按需引入(比如 popup 组件) + 自定义主题, 如下操作:
 // main.js
 import Vue from 'vue'
 
-import 'vant/lib/popup/style/less'
+import 'vant/es/popup/style/less'
 import 'mb-lib-ui/packages/theme-chalk/popup/index.less'
 import MbPopup from 'mb-lib-ui/lib/components/popup/index.js'
 
@@ -111,18 +115,12 @@ export default defineConfig({
           modifyVars: {
             // 这里定义 css 变量
             "@green": "#f60",
-
-            // 或者使用 less文件 来定义变量
-            hack: `true; @import "./var.less";`,
           },
         },
       },
     },
   }
 })
-
-// var.less
-@green: "#f60";
 
 // 其他配置文件参考主题定制
 ```

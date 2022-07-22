@@ -5,6 +5,12 @@ import 'prismjs/themes/prism-tomorrow.css'
 import './style.less'
 import VpDemo from '../components/vp-demo.vue'
 
+// 引入 MbLibUI 和 Vue2
+import '../../mb-lib/style.css'
+// import MbLibUI, { Vue2 } from '../../mb-lib/index.js'
+
+// Vue2.use(MbLibUI)
+
 export default {
   ...DefaultTheme,
   NotFound: () => 'custom 404', // <- this is a Vue 3 functional component

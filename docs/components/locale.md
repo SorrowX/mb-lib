@@ -39,7 +39,6 @@ Locale.add(messages)
 ```js
 import Vue from 'vue'
 
-// MbPopup组件包含Vant的popup组件源代码
 import 'mb-lib-ui/packages/theme-chalk/popup/index.less'
 import MbPopup, { Locale } from 'mb-lib-ui/lib/components/popup/index.js'
 
@@ -62,6 +61,8 @@ Locale.use('en-US', enUS)
 
 ## MbLibUI 国际化实现
 
-MbLibUI 国际化的实现是基于 Vant 的 Local 组件。实现一个国际化本身比较简单,由于 MbLibUI 本身基于 Vant 开发，所以会尽最大程度复用 Vant 的源代码, 从而专注于业务组件代码开发。
+MbLibUI 国际化的实现是基于 Vant 的 Local 组件, 实现一个国际化本身比较简单。
+
+由于 MbLibUI 本身基于 Vant 开发, 所以会尽最大程度复用 Vant 的源代码, 从而专注于业务组件代码开发。
 
 [Local 组件源代码](https://github.com/youzan/vant/blob/2.x/src/locale/index.ts)

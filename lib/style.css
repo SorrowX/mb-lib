@@ -1,3 +1,32 @@
 .mb-popup {
-  color: #f60;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+.mb-popup__header {
+  height: 56px;
+  display: flex;
+  flex: none;
+  align-items: center;
+  font-size: 16px;
+}
+.mb-popup__header-left {
+  padding: 0 16px;
+  flex: none;
+}
+.mb-popup__header-center {
+  flex: 1;
+  font-weight: 500;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.85);
+}
+.mb-popup__header-right {
+  padding: 0 16px;
+  flex: none;
+  font-weight: 400;
+  color: #2da74e;
+}
+.mb-popup__content {
+  flex: 1;
+  overflow: hidden;
 }

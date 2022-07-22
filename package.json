@@ -12,7 +12,8 @@
   },
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build && npm run build:components",
+    "build": "tsc && vite build && npm run build:components && npm run build:docs",
+    "build:docs": "node build/build-docs.mjs",
     "build:components": "node build/build.mjs",
     "preview": "vite preview"
   },

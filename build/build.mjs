@@ -49,9 +49,9 @@ export default async function doBuild() {
       await build(getBuildOptions(opts[i]))
     }
   } catch (e) {
-    console.error('构建失败: ', e)
+    console.error('组件构建失败: ', e)
   } finally {
-    console.error('构建结束.')
+    console.error('组件构建结束.')
   }
 }
 

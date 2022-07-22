@@ -1,3 +1,45 @@
 .vp-doc [class*='language-'] code {
   font-size: 0.92em;
 }
+
+.vp-doc {
+  & table {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 14px;
+    line-height: 1.5em;
+
+    thead {
+      tr,
+      th,
+      td {
+        border-top: 0px solid #fff !important;
+      }
+    }
+
+    tr,
+    th,
+    td {
+      white-space: nowrap;
+      border-left: 0px solid #fff !important;
+      border-right: 0px solid #fff !important;
+      padding: 0.6em 1em;
+      white-space: pre-wrap;
+      text-align: left !important;
+    }
+
+    th,
+    td {
+      min-width: 100px;
+    }
+    thead,
+    tbody,
+    tr {
+      width: 100%;
+    }
+  }
+  & th,
+  & td {
+    border: 1px solid #dcdfe6 !important;
+  }
+}
