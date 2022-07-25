@@ -1,34 +1,32 @@
+import path from 'path'
 import { createVuePlugin } from 'vite-plugin-vue2'
+
+const __dirname = path.resolve()
+const resolve = (dir) => path.join(__dirname, dir)
+
+const libDirName = 'mb-lib-ui'
 
 export default function getBaseConfig(isFullMode) {
   isFullMode = isFullMode || false
   return {
     resolve: {
-      alias: {
-        '@': '/packages',
-        'mb-lib-ui': '/',
-        '~@vant': '@vant',
-      },
+      alias: [
+        { find: '~@vant', replacement: '@vant' },
+        {
+          find: libDirName,
+          replacement: libDirName,
+          customResolver(id) {
+            return resolve(id.replace(libDirName, ''))
+          },
+        },
+      ],
     },
     css: {
       preprocessorOptions: {
         less: {
           modifyVars: {
-            hack: `true; @import "@/theme-chalk/var.less";`,
+            hack: `true; @import "mb-lib-ui/packages/theme-chalk/var.less";`,
           },
-          importer(url) {
-            console.log('isFullMode: ', isFullMode, url)
-            if (!isFullMode && /vant/.test(url)) {
-              return {
-                contents: '',
-              }
-            }
-          },
-        },
-        scss: {
-          additionalData: `
-            $button-primary-background-color: #f60;
-          `,
         },
       },
     },

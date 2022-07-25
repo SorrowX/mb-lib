@@ -13885,7 +13885,6 @@ var defaultMessages = deepAssign(zhCN, {
     loading: "\u52A0\u8F7D\u4E2D..."
   },
   mbPopup: {
-    test: "\u6D4B\u8BD5",
     sure: "\u786E\u5B9A"
   },
   mbList: {

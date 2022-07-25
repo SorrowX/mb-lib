@@ -2,9 +2,8 @@ import path from 'path'
 import { build, mergeConfig } from 'vite'
 import getBaseConfig from './base-config.mjs'
 
-const resolve = (dir) => path.join(__dirname, dir)
-
 const __dirname = path.resolve()
+const resolve = (dir) => path.join(__dirname, dir)
 
 const getBuildOptions = () => {
   const baseConfig = getBaseConfig(true)
@@ -24,14 +23,15 @@ const getBuildOptions = () => {
   })
 }
 
+const tip = '文档所需完整库文件包构建'
 export default async function doBuild() {
   try {
-    console.error('文档所需完整库文件包构建开始')
+    console.error(tip + '开始')
     await build(getBuildOptions())
   } catch (e) {
-    console.error('文档所需完整库文件包构建失败: ', e)
+    console.error(tip + '失败: ', e)
   } finally {
-    console.error('文档所需完整库文件包构建结束.')
+    console.error(tip + '结束.')
   }
 }
 

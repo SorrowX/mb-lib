@@ -43,56 +43,18 @@ const getBuildOptions = (optopns) => {
   })
 }
 
+const tip = '单独组件包构建'
 export default async function doBuild() {
   try {
-    console.error('单独组件包构建开始')
+    console.error(tip + '开始')
     for (let i = 0; i < opts.length; i++) {
       await build(getBuildOptions(opts[i]))
     }
   } catch (e) {
-    console.error('单独组件包构建失败: ', e)
+    console.error(tip + '失败: ', e)
   } finally {
-    console.error('单独组件包构建结束.')
+    console.error(tip + '结束.')
   }
 }
 
 doBuild()
-
-// ;(async () => {
-//   const inputs = componentsDirNames.reduce((pre, dirName) => {
-//     const entry = resolve(`${COMPONENTS_PATH}/${dirName}/index.js`)
-//     pre.push(entry)
-//     return pre
-//   }, [])
-
-//   await build({
-//     configFile: false,
-//     root: __dirname,
-//     resolve: {
-//       alias: {
-//         '@': '/packages',
-//       },
-//     },
-//     build: {
-//       cssCodeSplit: true,
-//       outDir: resolve(`lib/components`),
-//       write: true,
-//       lib: {
-//         entry: 'lib/components/index.js',
-//         name: 'components',
-//         formats: ['es'],
-//       },
-//       rollupOptions: {
-//         external: false
-//           ? ['vue']
-//           : (importer) => importer === 'vue' || /vant/.test(importer),
-//         output: {
-//           globals: { vue: 'Vue', vant: 'vant' },
-//           format: ['es'],
-//         },
-//         input: inputs,
-//       },
-//     },
-//     plugins: [createVuePlugin()],
-//   })
-// })()

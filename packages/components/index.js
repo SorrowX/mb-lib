@@ -1,9 +1,9 @@
-import '@/theme-chalk/index.less'
+import 'mb-lib-ui/packages/theme-chalk/index.less'
 
 // mb
-import Locale from '@/locale'
-import MbPopup from './popup/index.js'
-import MbList from './list/index.js'
+import Locale from 'mb-lib-ui/packages/locale/index.js'
+import MbPopup from './popup/index'
+import MbList from './list/index'
 
 // vant
 import { Button, Cell, Icon, Loading } from 'vant'

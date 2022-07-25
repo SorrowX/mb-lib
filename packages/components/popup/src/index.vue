@@ -48,7 +48,7 @@
 
 <script>
 import { Popup, Icon, Search } from 'vant'
-import { createNamespace } from '@/utils/create/index'
+import { createNamespace } from 'mb-lib-ui/packages/utils/create/index.js'
 const [defineComponent, t] = createNamespace('popup')
 
 const eventsExclude = [
