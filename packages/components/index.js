@@ -3,16 +3,18 @@ import '@/theme-chalk/index.less'
 // mb
 import Locale from '@/locale'
 import MbPopup from './popup/index.js'
+import MbList from './list/index.js'
 
 // vant
-import { Button, Cell, Icon } from 'vant'
+import { Button, Cell, Icon, Loading } from 'vant'
 
-const components = { MbPopup }
+const components = { MbPopup, MbList }
 
 const vantComponents = {
   MbButton: Button,
   MbCell: Cell,
   MbIcon: Icon,
+  MbLoading: Loading,
 }
 
 var version = '0.0.3'

@@ -2,7 +2,7 @@ import 'vant/lib/index.less'
 
 import Vue from 'vue'
 import MbLibUI from '@/components/index.js'
-import Test from '../docs/examples/popup/container.vue'
+import Test from '../docs/examples/list/slots.vue'
 
 Vue.use(MbLibUI)
 

@@ -45,13 +45,14 @@ const getBuildOptions = (optopns) => {
 
 export default async function doBuild() {
   try {
+    console.error('单独组件包构建开始')
     for (let i = 0; i < opts.length; i++) {
       await build(getBuildOptions(opts[i]))
     }
   } catch (e) {
-    console.error('组件构建失败: ', e)
+    console.error('单独组件包构建失败: ', e)
   } finally {
-    console.error('组件构建结束.')
+    console.error('单独组件包构建结束.')
   }
 }
 

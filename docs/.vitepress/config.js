@@ -59,13 +59,12 @@ function sidebarConfig() {
       text: '基础组件',
       items: [
         { text: 'Popup 弹出层', link: '/components/popup' },
+        { text: 'List 列表', link: '/components/list' },
+
         { text: 'Layout 布局', link: '/components/todo' },
         { text: 'Button 按钮', link: '/components/todo' },
         { text: 'Search 搜索', link: '/components/todo' },
         { text: 'Toast 轻提示', link: '/components/todo' },
-
-        { text: 'List 列表', link: '/components/todo' },
-        { text: 'PullRefresh 下拉刷新', link: '/components/todo' },
         { text: 'Dialog 弹出框', link: '/components/todo' },
       ],
     },

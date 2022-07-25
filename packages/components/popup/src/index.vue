@@ -49,7 +49,7 @@
 <script>
 import { Popup, Icon, Search } from 'vant'
 import { createNamespace } from '@/utils/create/index'
-const [defineComponent, bem, t] = createNamespace('popup')
+const [defineComponent, t] = createNamespace('popup')
 
 const eventsExclude = [
   'default',

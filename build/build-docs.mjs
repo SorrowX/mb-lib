@@ -26,6 +26,7 @@ const getBuildOptions = () => {
 
 export default async function doBuild() {
   try {
+    console.error('文档所需完整库文件包构建开始')
     await build(getBuildOptions())
   } catch (e) {
     console.error('文档所需完整库文件包构建失败: ', e)

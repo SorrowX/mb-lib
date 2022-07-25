@@ -30,3 +30,14 @@
   flex: 1;
   overflow: hidden;
 }
+.mb-list {
+  overflow: auto;
+}
+.mb-list__loading,
+.mb-list__finished-text,
+.mb-list__error-text {
+  color: #969799;
+  line-height: 50px;
+  font-size: 14px;
+  text-align: center;
+}

@@ -130,7 +130,3 @@ export default defineConfig({
 由于大多数情况下,我们项目都是用 Webpack 或者 Vite 来构建。所以 MbLibUI 库不提供 iife/cjs/amd/umd/system 模式的库文件,只提供 es 版库文件。
 
 :::
-
-## Vant 安装
-
-[有关 Vant 的安装教程,可以参考这里](https://vant-contrib.gitee.io/vant/v2/#/zh-CN/quickstart#an-zhuang)

@@ -23,7 +23,7 @@ export function createNamespace(name: string): CreateNamespaceReturn {
       comp.methods = methods
       return comp
     },
-    bem,
     t,
+    bem,
   ]
 }

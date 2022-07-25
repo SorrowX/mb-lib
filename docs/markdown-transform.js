@@ -63,6 +63,30 @@ export default function MarkdownTransform() {
 
       code += `\n<script setup>
         ${scriptCode}
+        \n
+        // 设置table的列宽
+        setTimeout(() => {
+          try {
+            const tables = document.querySelectorAll('table')
+            const mainWidth = document.querySelector('.main')?.offsetWidth || 688
+            tables.forEach((table) => {
+              const theadTr = table.querySelector('thead tr')
+              const ths = theadTr?.querySelectorAll('th')
+              const maps = {
+                1: mainWidth + 'px',
+                2: (mainWidth/2) + 'px',
+                3: (mainWidth/3) + 'px',
+                4: (mainWidth/4) + 'px',
+                5: (mainWidth/5) + 'px',
+                6: (mainWidth/6) + 'px',
+              }
+              ths &&
+                ths.forEach((th) => {
+                  th.style.minWidth = maps[ths.length]
+                })
+          })
+        } catch (e) {}
+        }, 1000)
       </script>
       `
 

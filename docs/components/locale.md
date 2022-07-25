@@ -9,7 +9,7 @@ MbLibUI 通过 Locale 组件实现多语言支持，使用 Locale.use 方法可�
 ```js
 import { Locale } from 'mb-lib-ui'
 // 引入英文语言包
-import enUS from 'mb-lib-ui/packages/locale/lang/en-US.ts'
+import enUS from 'mb-lib-ui/packages/locale/lang/en-US'
 
 Locale.use('en-US', enUS)
 ```
@@ -23,8 +23,8 @@ import { Locale } from 'mb-lib-ui'
 
 const messages = {
   'zh-CN': {
-    mbPopup: {
-      test: '测试Test属性值', // 将'测试'修改为'测试Test属性值'
+    common: {
+      loading: '正在加载', // 将'加载中...'修改为'正在加载'
     },
   },
 }
@@ -48,14 +48,14 @@ Vue.use(MbPopup)
 const messages = {
   'zh-CN': {
     mbPopup: {
-      test: '测试Test属性值', // 将'测试'修改为'测试Test属性值'
+      loading: '正在加载', // 将'加载中...'修改为'正在加载'
     },
   },
 }
 Locale.add(messages)
 
 // 语言切换
-import enUS from 'mb-lib-ui/packages/locale/lang/en-US.ts'
+import enUS from 'mb-lib-ui/packages/locale/lang/en-US'
 Locale.use('en-US', enUS)
 ```
 

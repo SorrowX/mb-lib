@@ -6,6 +6,7 @@ export default function getBaseConfig(isFullMode) {
     resolve: {
       alias: {
         '@': '/packages',
+        'mb-lib-ui': '/',
         '~@vant': '@vant',
       },
     },

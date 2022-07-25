@@ -1,7 +1,7 @@
 {
   "name": "mb-lib-ui",
   "private": false,
-  "version": "0.0.4",
+  "version": "0.0.5",
   "files": [
     "lib",
     "packages"
@@ -27,6 +27,7 @@
   },
   "dependencies": {
     "vant": "^2.12.47",
+    "element-ui": "^2.15.7",
     "vue": "2.6.14"
   }
 }

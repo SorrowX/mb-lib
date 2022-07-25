@@ -7,5 +7,9 @@ page: true
 <!-- Placeholder -->
 
 <script>
-  window.location.href = `/components/introduction.html`
+export default {
+  mounted() {
+    window.location.href = `/components/introduction.html`
+  }
+}
 </script>
