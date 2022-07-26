@@ -1,5 +1,5 @@
-import zhCN from 'vant/es/locale/lang/zh-CN'
-import { deepAssign } from 'vant/es/utils/deep-assign'
+import zhCN from 'vant/es/locale/lang/zh-CN.js'
+import { deepAssign } from 'vant/es/utils/deep-assign.js'
 
 export default deepAssign(zhCN, {
   common: {

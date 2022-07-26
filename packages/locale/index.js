@@ -1,5 +1,5 @@
-import Locale from 'vant/lib/locale/index.js'
-import defaultMessages from './lang/zh-CN'
+import Locale from 'vant/es/locale/index.js'
+import defaultMessages from './lang/zh-CN.js'
 
 Locale.add({
   'zh-CN': defaultMessages,

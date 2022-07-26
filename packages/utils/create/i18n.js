@@ -1,5 +1,5 @@
-import { get, isFunction } from 'vant/lib/utils/index.js'
-import { camelize } from 'vant/lib/utils/format/string.js'
+import { get, isFunction } from 'vant/es/utils/index.js'
+import { camelize } from 'vant/es/utils/format/string.js'
 import Locale from 'mb-lib-ui/packages/locale/index.js'
 
 export function createI18N(name) {

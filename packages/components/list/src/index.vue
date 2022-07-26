@@ -53,7 +53,7 @@
 
 <script>
 import { PullRefresh, Loading } from 'vant'
-import InfiniteScroll from 'element-ui/packages/infinite-scroll/index'
+import InfiniteScroll from 'element-ui/packages/infinite-scroll/index.js'
 import { createNamespace } from 'mb-lib-ui/packages/utils/create/index.js'
 const [defineComponent, t] = createNamespace('list')
 const scope = 'ElInfiniteScroll'

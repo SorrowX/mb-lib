@@ -1,6 +1,6 @@
-import { createBEM } from 'vant/lib/utils/create/bem'
-import { createComponent } from 'vant/lib/utils/create/component'
-import { createI18N } from './i18n'
+import { createBEM } from 'vant/es/utils/create/bem.js'
+import { createComponent } from 'vant/es/utils/create/component.js'
+import { createI18N } from './i18n.js'
 
 export function createNamespace(name) {
   name = 'mb-' + name
