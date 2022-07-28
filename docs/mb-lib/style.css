@@ -1456,8 +1456,8 @@ ul {
 }
 .van-checkbox__icon--checked .van-icon {
   color: #fff;
-  background-color: #1989fa;
-  border-color: #1989fa;
+  background-color: #2da74e;
+  border-color: #2da74e;
 }
 .van-checkbox__icon--disabled {
   cursor: not-allowed;
@@ -1647,8 +1647,8 @@ ul {
 }
 .van-radio__icon--checked .van-icon {
   color: #fff;
-  background-color: #1989fa;
-  border-color: #1989fa;
+  background-color: #2da74e;
+  border-color: #2da74e;
 }
 .van-radio__icon--disabled {
   cursor: not-allowed;
@@ -5812,4 +5812,23 @@ ul {
   line-height: 50px;
   font-size: 14px;
   text-align: center;
+}
+.mb-field-sheet__tags {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  color: #323233;
+  font-size: 14px;
+}
+.mb-field-sheet__tags--placeholder {
+  color: #969799;
+}
+.mb-field-sheet__tags--disabled {
+  color: #c8c9cc;
+}
+.mb-field-sheet__tags .van-tag {
+  margin-left: 6px;
+}
+.mb-field-sheet--disabled .van-field__right-icon {
+  color: #c8c9cc;
 }

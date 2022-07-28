@@ -5,6 +5,7 @@ export default deepAssign(enUS, {
   common: {
     searchPlaceholder: 'Please enter search keywords',
     loading: 'Loading...',
+    select: 'Select',
   },
   mbPopup: {
     sure: 'Sure',

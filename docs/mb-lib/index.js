@@ -13444,7 +13444,8 @@ var Locale = {
 var defaultMessages = deepAssign(zhCN, {
   common: {
     searchPlaceholder: "\u8BF7\u8F93\u5165\u641C\u7D22\u5173\u952E\u8BCD",
-    loading: "\u52A0\u8F7D\u4E2D..."
+    loading: "\u52A0\u8F7D\u4E2D...",
+    select: "\u8BF7\u9009\u62E9"
   },
   mbPopup: {
     sure: "\u786E\u5B9A"
@@ -13511,6 +13512,7 @@ var normalMerge = ["attrs", "props", "domProps"], toArrayMerge = ["class", "styl
   };
 };
 var helper = mergeJsxProps;
+var _mergeJSXProps = helper;
 var inheritKey = ["ref", "key", "style", "class", "attrs", "refInFor", "nativeOn", "directives", "staticClass", "staticStyle"];
 var mapInheritKey = {
   nativeOn: "on"
@@ -13630,7 +13632,7 @@ function Overlay(h, props2, slots2, ctx) {
     "attrs": {
       "name": "van-fade"
     }
-  }, [h("div", helper([{
+  }, [h("div", _mergeJSXProps([{
     "directives": [{
       name: "show",
       value: props2.show
@@ -14101,7 +14103,7 @@ function Info(h, props2, slots2, ctx) {
   if (!dot && !showInfo) {
     return;
   }
-  return h("div", helper([{
+  return h("div", _mergeJSXProps([{
     "class": bem$1w({
       dot
     })
@@ -14128,7 +14130,7 @@ function Icon(h, props2, slots2, ctx) {
   var _props$badge;
   var name = correctName(props2.name);
   var imageIcon = isImage(name);
-  return h(props2.tag, helper([{
+  return h(props2.tag, _mergeJSXProps([{
     "class": [props2.classPrefix, imageIcon ? "" : props2.classPrefix + "-" + name],
     "style": {
       color: props2.color,
@@ -14304,7 +14306,7 @@ function Loading(h, props2, slots2, ctx) {
     style12.width = iconSize;
     style12.height = iconSize;
   }
-  return h("div", helper([{
+  return h("div", _mergeJSXProps([{
     "class": bem$1t([type2, {
       vertical: props2.vertical
     }])
@@ -14415,7 +14417,7 @@ function ActionSheet(h, props2, slots2, ctx) {
       }, [description]);
     }
   }
-  return h(Popup, helper([{
+  return h(Popup, _mergeJSXProps([{
     "class": bem$1s(),
     "attrs": {
       "position": "bottom",
@@ -14827,7 +14829,7 @@ var PickerColumn = createComponent$1A({
           class: "van-ellipsis",
           domProps: (_domProps = {}, _domProps[_this4.allowHtml ? "innerHTML" : "textContent"] = text2, _domProps)
         };
-        return h("li", helper([{}, data49]), [_this4.slots("option", option) || h("div", helper([{}, childData]))]);
+        return h("li", _mergeJSXProps([{}, data49]), [_this4.slots("option", option) || h("div", _mergeJSXProps([{}, childData]))]);
       });
     }
   },
@@ -15554,7 +15556,7 @@ function Cell(h, props2, slots2, ctx) {
   if (size2) {
     classes[size2] = size2;
   }
-  return h("div", helper([{
+  return h("div", _mergeJSXProps([{
     "class": bem$1o(classes),
     "attrs": {
       "role": clickable ? "button" : null,
@@ -15963,7 +15965,7 @@ var Field = createComponent$1w({
         }]
       };
       if (type2 === "textarea") {
-        return h("textarea", helper([{}, inputProps]));
+        return h("textarea", _mergeJSXProps([{}, inputProps]));
       }
       var inputType = type2;
       var inputMode;
@@ -15975,7 +15977,7 @@ var Field = createComponent$1w({
         inputType = "tel";
         inputMode = "numeric";
       }
-      return h("input", helper([{
+      return h("input", _mergeJSXProps([{
         "attrs": {
           "type": inputType,
           "inputmode": inputMode
@@ -16491,7 +16493,7 @@ function Button(h, props2, slots2, ctx) {
     }
     return content;
   }
-  return h(tag, helper([{
+  return h(tag, _mergeJSXProps([{
     "style": style12,
     "class": classes,
     "attrs": {
@@ -16907,7 +16909,7 @@ var VanDialog = createComponent$1r({
           "class": bem$1i("content", {
             isolated: !hasTitle
           })
-        }, [h("div", helper([{}, data49]))]);
+        }, [h("div", _mergeJSXProps([{}, data49]))]);
       }
     }
   },
@@ -17723,7 +17725,7 @@ function Tag(h, props2, slots2, ctx) {
     "attrs": {
       "name": props2.closeable ? "van-fade" : null
     }
-  }, [h("span", helper([{
+  }, [h("span", _mergeJSXProps([{
     "key": "content",
     "style": style12,
     "class": bem$1d([classes, type2])
@@ -17952,7 +17954,7 @@ function AddressItem(h, props2, slots2, ctx) {
     "on": {
       "click": onClick19
     }
-  }, [h(Cell$1, helper([{
+  }, [h(Cell$1, _mergeJSXProps([{
     "attrs": {
       "border": false,
       "valueClass": bem$1b("value")
@@ -18010,7 +18012,7 @@ function AddressList(h, props2, slots2, ctx) {
   }
   var List2 = genList(props2.list);
   var DisabledList = genList(props2.disabledList, true);
-  return h("div", helper([{
+  return h("div", _mergeJSXProps([{
     "class": bem$1a()
   }, inherit(ctx)]), [slots2.top == null ? void 0 : slots2.top(), h(RadioGroup, {
     "attrs": {
@@ -19120,7 +19122,7 @@ var Image = createComponent$1e({
         return;
       }
       if (this.lazyLoad) {
-        return h("img", helper([{
+        return h("img", _mergeJSXProps([{
           "ref": "image",
           "directives": [{
             name: "lazy",
@@ -19128,7 +19130,7 @@ var Image = createComponent$1e({
           }]
         }, imgData]));
       }
-      return h("img", helper([{
+      return h("img", _mergeJSXProps([{
         "attrs": {
           "src": this.src
         },
@@ -19255,7 +19257,7 @@ function Card(h, props2, slots2, ctx) {
       }, [slots2.footer()]);
     }
   }
-  return h("div", helper([{
+  return h("div", _mergeJSXProps([{
     "class": bem$16()
   }, inherit(ctx, true)]), [h("div", {
     "class": bem$16("header")
@@ -20287,7 +20289,7 @@ var Cascader = createComponent$17({
 var _createNamespace$12 = createNamespace$1("cell-group"), createComponent$16 = _createNamespace$12[0], bem$$ = _createNamespace$12[1];
 function CellGroup(h, props2, slots2, ctx) {
   var _ref;
-  var Group = h("div", helper([{
+  var Group = h("div", _mergeJSXProps([{
     "class": [bem$$({
       inset: props2.inset
     }), (_ref = {}, _ref[BORDER_TOP_BOTTOM] = props2.border, _ref)]
@@ -20828,7 +20830,7 @@ function ContactCard(h, props2, slots2, ctx) {
     }
     return [h("div", [t$k("name") + "\uFF1A" + props2.name]), h("div", [t$k("tel") + "\uFF1A" + props2.tel])];
   }
-  return h(Cell$1, helper([{
+  return h(Cell$1, _mergeJSXProps([{
     "attrs": {
       "center": true,
       "border": false,
@@ -21087,7 +21089,7 @@ function ContactList(h, props2, slots2, ctx) {
       }
     });
   });
-  return h("div", helper([{
+  return h("div", _mergeJSXProps([{
     "class": bem$S()
   }, inherit(ctx)]), [h(RadioGroup, {
     "attrs": {
@@ -21408,7 +21410,7 @@ function formatValue(props2) {
 function CouponCell(h, props2, slots2, ctx) {
   var selected = props2.coupons[+props2.chosenCoupon];
   var value17 = formatValue(props2);
-  return h(Cell$1, helper([{
+  return h(Cell$1, _mergeJSXProps([{
     "class": bem$P(),
     "attrs": {
       "value": value17,
@@ -22226,7 +22228,7 @@ var DatetimePicker = createComponent$S({
 var _createNamespace$N = createNamespace$1("divider"), createComponent$R = _createNamespace$N[0], bem$M = _createNamespace$N[1];
 function Divider(h, props2, slots2, ctx) {
   var _bem;
-  return h("div", helper([{
+  return h("div", _mergeJSXProps([{
     "attrs": {
       "role": "separator"
     },
@@ -24826,7 +24828,7 @@ function Notify$1(h, props2, slots2, ctx) {
     color: props2.color,
     background: props2.background
   };
-  return h(Popup, helper([{
+  return h(Popup, _mergeJSXProps([{
     "attrs": {
       "value": props2.value,
       "position": "top",
@@ -25442,7 +25444,7 @@ function Panel(h, props2, slots2, ctx) {
       "class": [bem$s("footer"), BORDER_TOP]
     }, [slots2.footer()])];
   };
-  return h(CellGroup$1, helper([{
+  return h(CellGroup$1, _mergeJSXProps([{
     "class": bem$s(),
     "scopedSlots": {
       default: Content2
@@ -25488,7 +25490,7 @@ function PasswordInput(h, props2, slots2, ctx) {
   }
   return h("div", {
     "class": bem$r()
-  }, [h("ul", helper([{
+  }, [h("ul", _mergeJSXProps([{
     "class": [bem$r("security"), (_ref2 = {}, _ref2[BORDER_SURROUND] = !gutter, _ref2)],
     "on": {
       "touchstart": function touchstart(event) {
@@ -27174,7 +27176,7 @@ function Search(h, props2, slots2, ctx) {
   };
   var inheritData = inherit(ctx);
   inheritData.attrs = void 0;
-  return h("div", helper([{
+  return h("div", _mergeJSXProps([{
     "class": bem$l({
       "show-action": props2.showAction
     }),
@@ -27183,7 +27185,7 @@ function Search(h, props2, slots2, ctx) {
     }
   }, inheritData]), [slots2.left == null ? void 0 : slots2.left(), h("div", {
     "class": bem$l("content", props2.shape)
-  }, [Label(), h(Field, helper([{
+  }, [Label(), h(Field, _mergeJSXProps([{
     "attrs": {
       "type": "search",
       "border": false,
@@ -27506,7 +27508,7 @@ function Skeleton(h, props2, slots2, ctx) {
       });
     }
   }
-  return h("div", helper([{
+  return h("div", _mergeJSXProps([{
     "class": bem$h({
       animate: props2.animate,
       round: props2.round
@@ -27764,7 +27766,7 @@ function SkuHeader$1(h, props2, slots2, ctx) {
   var previewImage = function previewImage2() {
     skuEventBus.$emit("sku:previewImage", selectedValue);
   };
-  return h("div", helper([{
+  return h("div", _mergeJSXProps([{
     "class": [bem$g(), BORDER_BOTTOM]
   }, inherit(ctx)]), [showHeaderImage && h(Image, {
     "attrs": {
@@ -27789,7 +27791,7 @@ SkuHeader$1.props = {
 var SkuHeader$2 = createComponent$l(SkuHeader$1);
 var _createNamespace$g = createNamespace$1("sku-header-item"), createComponent$k = _createNamespace$g[0], bem$f = _createNamespace$g[1];
 function SkuHeader(h, props2, slots2, ctx) {
-  return h("div", helper([{
+  return h("div", _mergeJSXProps([{
     "class": bem$f()
   }, inherit(ctx)]), [slots2.default && slots2.default()]);
 }
@@ -28262,7 +28264,7 @@ var Stepper = createComponent$g({
     };
     return h("div", {
       "class": bem$d([this.theme])
-    }, [h("button", helper([{
+    }, [h("button", _mergeJSXProps([{
       "directives": [{
         name: "show",
         value: this.showMinus
@@ -28302,7 +28304,7 @@ var Stepper = createComponent$g({
         "blur": this.onBlur,
         "mousedown": this.onMousedown
       }
-    }), h("button", helper([{
+    }), h("button", _mergeJSXProps([{
       "directives": [{
         name: "show",
         value: this.showPlus
@@ -29342,7 +29344,7 @@ function SkuActions(h, props2, slots2, ctx) {
       props2.skuEventBus.$emit(name);
     };
   };
-  return h("div", helper([{
+  return h("div", _mergeJSXProps([{
     "class": bem$a()
   }, inherit(ctx)]), [props2.showAddCartBtn && h(Button$1, {
     "attrs": {
@@ -30475,7 +30477,7 @@ function SubmitBar(h, props2, slots2, ctx) {
       }, [tip2]), slots2.tip && slots2.tip()]);
     }
   }
-  return h("div", helper([{
+  return h("div", _mergeJSXProps([{
     "class": bem$5({
       unfit: !props2.safeAreaInsetBottom
     })
@@ -30714,7 +30716,7 @@ var SwipeCell = createComponent$4({
 });
 var _createNamespace$3 = createNamespace$1("switch-cell"), createComponent$3 = _createNamespace$3[0], bem$3 = _createNamespace$3[1];
 function SwitchCell(h, props2, slots2, ctx) {
-  return h(Cell$1, helper([{
+  return h(Cell$1, _mergeJSXProps([{
     "attrs": {
       "center": true,
       "size": props2.cellSize,
@@ -30991,7 +30993,7 @@ function TreeSelect(h, props2, slots2, ctx) {
       })]);
     });
   }
-  return h("div", helper([{
+  return h("div", _mergeJSXProps([{
     "class": bem(),
     "style": {
       height: addUnit(height)
@@ -31079,7 +31081,7 @@ function createNamespace(name) {
     bem2
   ];
 }
-var render$1 = function() {
+var render$3 = function() {
   var _vm = this;
   var _h = _vm.$createElement;
   var _c = _vm._self._c || _h;
@@ -31135,7 +31137,7 @@ var render$1 = function() {
     class: _vm.$bem("content")
   }, [_vm._t("default")], 2)]);
 };
-var staticRenderFns$1 = [];
+var staticRenderFns$3 = [];
 function normalizeComponent(scriptExports, render86, staticRenderFns2, functionalTemplate, injectStyles, scopeId, moduleIdentifier, shadowMode) {
   var options = typeof scriptExports === "function" ? scriptExports.options : scriptExports;
   if (render86) {
@@ -31187,18 +31189,23 @@ function normalizeComponent(scriptExports, render86, staticRenderFns2, functiona
     options
   };
 }
-const [defineComponent$1, t$1] = createNamespace("popup");
+const [defineComponent$2, t$1] = createNamespace("popup");
 const eventsExclude = [
   "default",
   "header-left",
   "header-center",
   "header-right"
 ];
-const __vue2_script$1 = defineComponent$1({
+const __vue2_script$3 = defineComponent$2({
   components: {
     VanPopup: Popup,
     VanIcon: Icon$1,
     VanSearch: Search$1
+  },
+  provide() {
+    return {
+      vanForm: null
+    };
   },
   props: {
     title: {
@@ -31270,15 +31277,15 @@ const __vue2_script$1 = defineComponent$1({
   mounted() {
   }
 });
-const __cssModules$1 = {};
-var __component__$1 = /* @__PURE__ */ normalizeComponent(__vue2_script$1, render$1, staticRenderFns$1, false, __vue2_injectStyles$1, null, null, null);
-function __vue2_injectStyles$1(context2) {
-  for (let o in __cssModules$1) {
-    this[o] = __cssModules$1[o];
+const __cssModules$3 = {};
+var __component__$3 = /* @__PURE__ */ normalizeComponent(__vue2_script$3, render$3, staticRenderFns$3, false, __vue2_injectStyles$3, null, null, null);
+function __vue2_injectStyles$3(context2) {
+  for (let o in __cssModules$3) {
+    this[o] = __cssModules$3[o];
   }
 }
 var MbPopup = /* @__PURE__ */ function() {
-  return __component__$1.exports;
+  return __component__$3.exports;
 }();
 var throttle$1 = function(delay, noTrailing, callback2, debounceMode) {
   var timeoutID;
@@ -31522,7 +31529,7 @@ var InfiniteScroll = {
 InfiniteScroll.install = function(Vue3) {
   Vue3.directive(InfiniteScroll.name, InfiniteScroll);
 };
-var render85 = function() {
+var render$2 = function() {
   var _vm = this;
   var _h = _vm.$createElement;
   var _c = _vm._self._c || _h;
@@ -31597,10 +31604,10 @@ var render85 = function() {
     return [_vm._v(" " + _vm._s(_vm.errorText) + " ")];
   })], 2) : _vm._e()], 2)])], 1);
 };
-var staticRenderFns = [];
-const [defineComponent, t] = createNamespace("list");
+var staticRenderFns$2 = [];
+const [defineComponent$1, t] = createNamespace("list");
 const scope2 = "ElInfiniteScroll";
-const __vue2_script = defineComponent({
+const __vue2_script$2 = defineComponent$1({
   components: {
     VanPullRefresh: PullRefresh,
     VanLoading: Loading$1
@@ -31719,6 +31726,351 @@ const __vue2_script = defineComponent({
     };
   }
 });
+const __cssModules$2 = {};
+var __component__$2 = /* @__PURE__ */ normalizeComponent(__vue2_script$2, render$2, staticRenderFns$2, false, __vue2_injectStyles$2, null, null, null);
+function __vue2_injectStyles$2(context2) {
+  for (let o in __cssModules$2) {
+    this[o] = __cssModules$2[o];
+  }
+}
+var MbList = /* @__PURE__ */ function() {
+  return __component__$2.exports;
+}();
+var getProps = () => {
+  return {
+    disabled: {
+      type: Boolean,
+      default: false
+    },
+    multiple: {
+      type: Boolean,
+      default: false
+    },
+    labelKey: {
+      type: String,
+      default: "label"
+    },
+    nameKey: {
+      type: String,
+      default: "name"
+    },
+    clearable: {
+      type: Boolean,
+      default: false
+    },
+    collapse: {
+      type: Boolean,
+      default: false
+    },
+    collapseCount: {
+      type: Number,
+      default: 1
+    },
+    labelSeparator: {
+      type: String,
+      default: ", "
+    },
+    formatter: {
+      type: Function
+    },
+    tagSize: {
+      type: String,
+      default: "medium"
+    }
+  };
+};
+var render$1 = function() {
+  var _vm = this;
+  var _h = _vm.$createElement;
+  var _c = _vm._self._c || _h;
+  return _c("div", {
+    class: _vm.$bem("tags", {
+      disabled: _vm.disabled
+    })
+  }, [_vm.clearable || _vm.collapse ? [_vm.collapse ? [_vm.tags.length ? _c("div", [_vm._l(_vm.collapseTags, function(tag, index2) {
+    return _c("van-tag", {
+      key: index2,
+      attrs: {
+        "closeable": _vm.clearable,
+        "size": _vm.tagSize,
+        "plain": ""
+      },
+      on: {
+        "close": function($event) {
+          return _vm.close(tag);
+        }
+      }
+    }, [_vm._v(" " + _vm._s(tag[_vm.labelKey]) + " ")]);
+  }), _vm.tags.length - _vm.collapseCount >= 1 ? _c("van-tag", {
+    attrs: {
+      "size": _vm.tagSize,
+      "plain": ""
+    }
+  }, [_vm._v(" + " + _vm._s(_vm.tags.length - _vm.collapseCount) + " ")]) : _vm._e()], 2) : _c("span", {
+    class: _vm.$bem("tags--placeholder")
+  }, [_vm._v(" " + _vm._s(_vm.$translate("common.select")) + " ")])] : [_vm.tags.length ? _c("div", _vm._l(_vm.tags, function(tag, index2) {
+    return _c("van-tag", {
+      key: index2,
+      attrs: {
+        "closeable": _vm.clearable,
+        "size": _vm.tagSize,
+        "plain": ""
+      },
+      on: {
+        "close": function($event) {
+          return _vm.close(tag);
+        }
+      }
+    }, [_vm._v(" " + _vm._s(tag[_vm.labelKey]) + " ")]);
+  }), 1) : _c("span", {
+    class: _vm.$bem("tags--placeholder")
+  }, [_vm._v(" " + _vm._s(_vm.$translate("common.select")) + " ")])]] : _c("span", {
+    class: _vm.labels ? "" : _vm.$bem("tags--placeholder")
+  }, [_vm._v(" " + _vm._s(_vm.labels || _vm.$translate("common.select")) + " ")])], 2);
+};
+var staticRenderFns$1 = [];
+const __vue2_script$1 = {
+  name: "MbTags",
+  mixins: [FieldMixin],
+  components: {
+    VanTag: Tag$1
+  },
+  model: {
+    prop: "modelValue",
+    event: "update:modelValue"
+  },
+  props: {
+    ...getProps(),
+    modelValue: {
+      type: [Object, Array],
+      default: () => ({})
+    },
+    $bem: {
+      type: Function
+    },
+    $translate: {
+      type: Function
+    }
+  },
+  data() {
+    return {};
+  },
+  computed: {
+    value() {
+      const { formatter: formatter2, bindValue } = this;
+      if (formatter2) {
+        return formatter2(bindValue);
+      }
+      return bindValue;
+    },
+    bindValue: {
+      get() {
+        return this.modelValue;
+      },
+      set(val) {
+        this.updateModelValue(val);
+      }
+    },
+    tags() {
+      const { multiple: multiple2, bindValue, nameKey } = this;
+      if (multiple2 && !Array.isArray(bindValue)) {
+        throw new Error("[field-action]: value type must array.");
+      }
+      if (!multiple2 && !isObject(bindValue)) {
+        throw new Error("[field-action]: value type must object.");
+      }
+      const tags = multiple2 ? bindValue : [bindValue];
+      return tags.filter((_) => isDef(_[nameKey]));
+    },
+    labels() {
+      const { labelKey, labelSeparator, tags } = this;
+      return tags.map((_) => _[labelKey]).join(`${labelSeparator}`);
+    },
+    collapseTags() {
+      const { collapseCount, tags } = this;
+      return tags.slice(0, collapseCount);
+    }
+  },
+  methods: {
+    close(tag) {
+      const { nameKey, bindValue, tags, multiple: multiple2 } = this;
+      if (multiple2) {
+        const index2 = bindValue.findIndex((_) => _[nameKey] === tag[nameKey]);
+        if (index2 !== -1) {
+          bindValue.splice(index2, 1);
+        }
+      } else {
+        this.bindValue = {};
+      }
+      this.onCloseTag({
+        multiple: multiple2,
+        tag
+      });
+    }
+  },
+  beforeCreate() {
+    const createEmitter = (eventName) => (event) => this.$emit(eventName, event);
+    this.updateModelValue = createEmitter("update:modelValue");
+    this.onCloseTag = createEmitter("close-tag");
+  }
+};
+const __cssModules$1 = {};
+var __component__$1 = /* @__PURE__ */ normalizeComponent(__vue2_script$1, render$1, staticRenderFns$1, false, __vue2_injectStyles$1, null, null, null);
+function __vue2_injectStyles$1(context2) {
+  for (let o in __cssModules$1) {
+    this[o] = __cssModules$1[o];
+  }
+}
+var MbTags = /* @__PURE__ */ function() {
+  return __component__$1.exports;
+}();
+var render85 = function() {
+  var _vm = this;
+  var _h = _vm.$createElement;
+  var _c = _vm._self._c || _h;
+  return _c("van-field", _vm._b({
+    ref: "fieldRef",
+    class: _vm.$bem({
+      disabled: _vm.disabled
+    }),
+    attrs: {
+      "right-icon": "arrow",
+      "disabled": _vm.disabled
+    },
+    on: {
+      "click-input": _vm.handleClickInput,
+      "click-right-icon": _vm.handleClickInput
+    },
+    scopedSlots: _vm._u([{
+      key: "input",
+      fn: function() {
+        return [_c("mb-tags", _vm._b({
+          attrs: {
+            "$bem": _vm.$bem,
+            "$translate": _vm.$translate
+          },
+          on: {
+            "close-tag": _vm.onCloseTag
+          },
+          model: {
+            value: _vm.bindValue,
+            callback: function($$v) {
+              _vm.bindValue = $$v;
+            },
+            expression: "bindValue"
+          }
+        }, "mb-tags", _vm.tagsProps, false))];
+      },
+      proxy: true
+    }, {
+      key: "extra",
+      fn: function() {
+        return [_c("mb-popup", _vm._g(_vm._b({
+          class: _vm.popupClass,
+          style: _vm.popupStyle,
+          on: {
+            "sure": _vm.onSure,
+            "close": _vm.onClose,
+            "search": _vm.onSearch
+          },
+          model: {
+            value: _vm.showPopup,
+            callback: function($$v) {
+              _vm.showPopup = $$v;
+            },
+            expression: "showPopup"
+          }
+        }, "mb-popup", _vm.mergePopupProps, false), _vm.popupEvents), [_vm._t("default")], 2)];
+      },
+      proxy: true
+    }], null, true)
+  }, "van-field", _vm.$attrs, false));
+};
+var staticRenderFns = [];
+const [defineComponent] = createNamespace("field-sheet");
+const defaultPopupProps = () => ({
+  title: "",
+  showHeader: true,
+  showSearch: true,
+  round: true,
+  position: "bottom",
+  getContainer: "body"
+});
+const __vue2_script = defineComponent({
+  components: {
+    MbPopup,
+    MbTags,
+    VanField: Field
+  },
+  props: {
+    ...getProps(),
+    value: {
+      type: [Object, Array],
+      default: () => ({})
+    },
+    popupProps: {
+      type: Object,
+      default: () => defaultPopupProps()
+    },
+    popupEvents: {
+      type: Object,
+      default: () => ({})
+    },
+    popupStyle: {
+      type: [Object, Array],
+      default: () => []
+    },
+    popupClass: {
+      type: [Object, Array, String],
+      default: ""
+    }
+  },
+  data() {
+    return {
+      showPopup: false
+    };
+  },
+  computed: {
+    bindValue: {
+      get() {
+        return this.value;
+      },
+      set(val) {
+        this.onInput(val);
+      }
+    },
+    mergePopupProps() {
+      return Object.assign(defaultPopupProps(), this.popupProps);
+    },
+    tagsProps() {
+      return Object.keys(getProps()).reduce((pre, key) => {
+        return {
+          [key]: this[key],
+          ...pre
+        };
+      }, {});
+    }
+  },
+  methods: {
+    handleClickInput() {
+      const { disabled } = this;
+      if (disabled)
+        return;
+      this.toggle();
+    },
+    toggle() {
+      this.showPopup = !this.showPopup;
+    }
+  },
+  beforeCreate() {
+    const createEmitter = (eventName) => (event) => this.$emit(eventName, event);
+    this.onInput = createEmitter("input");
+    this.onSure = createEmitter("sure");
+    this.onClose = createEmitter("close");
+    this.onSearch = createEmitter("search");
+    this.onCloseTag = createEmitter("close-tag");
+  }
+});
 const __cssModules = {};
 var __component__ = /* @__PURE__ */ normalizeComponent(__vue2_script, render85, staticRenderFns, false, __vue2_injectStyles, null, null, null);
 function __vue2_injectStyles(context2) {
@@ -31726,15 +32078,23 @@ function __vue2_injectStyles(context2) {
     this[o] = __cssModules[o];
   }
 }
-var MbList = /* @__PURE__ */ function() {
+var MbFieldSheet = /* @__PURE__ */ function() {
   return __component__.exports;
 }();
-const components = { MbPopup, MbList };
+const components = { MbPopup, MbList, MbFieldSheet };
 const vantComponents = {
   MbButton: Button$1,
   MbCell: Cell$1,
   MbIcon: Icon$1,
-  MbLoading: Loading$1
+  MbLoading: Loading$1,
+  MbCellGroup: CellGroup$1,
+  MbField: Field,
+  MbForm: Form,
+  MbCheckbox: Checkbox,
+  MbCheckboxGroup: CheckboxGroup,
+  MbRadio: Radio,
+  MbRadioGroup: RadioGroup,
+  MbSearch: Search$1
 };
 var version = "0.0.3";
 function install(Vue3) {

@@ -64,6 +64,11 @@ export default defineComponent({
     VanIcon: Icon,
     VanSearch: Search,
   },
+  provide() {
+    return {
+      vanForm: null,
+    }
+  },
   props: {
     title: {
       type: String,

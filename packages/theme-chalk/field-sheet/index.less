@@ -1,0 +1,26 @@
+@import '../var.less';
+
+.mb-field-sheet {
+  &__tags {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    color: @field-sheet-color;
+    font-size: @field-sheet-font-size-md;
+    &--placeholder {
+      color: @field-sheet-placeholder-color;
+    }
+    &--disabled {
+      color: @field-sheet-disabled;
+    }
+    & .van-tag {
+      margin-left: @field-sheet-margin-left;
+    }
+  }
+
+  &--disabled {
+    .van-field__right-icon {
+      color: @field-sheet-disabled;
+    }
+  }
+}

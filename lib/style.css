@@ -41,3 +41,22 @@
   font-size: 14px;
   text-align: center;
 }
+.mb-field-sheet__tags {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  color: #323233;
+  font-size: 14px;
+}
+.mb-field-sheet__tags--placeholder {
+  color: #969799;
+}
+.mb-field-sheet__tags--disabled {
+  color: #c8c9cc;
+}
+.mb-field-sheet__tags .van-tag {
+  margin-left: 6px;
+}
+.mb-field-sheet--disabled .van-field__right-icon {
+  color: #c8c9cc;
+}

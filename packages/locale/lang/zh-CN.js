@@ -5,6 +5,7 @@ export default deepAssign(zhCN, {
   common: {
     searchPlaceholder: '请输入搜索关键词',
     loading: '加载中...',
+    select: '请选择',
   },
   mbPopup: {
     sure: '确定',

@@ -71,6 +71,8 @@ function sidebarConfig() {
     {
       text: '表单组件',
       items: [
+        { text: 'FieldSheet 表单项面板', link: '/components/field-sheet' },
+
         { text: 'Select 列表选择', link: '/components/todo' },
         { text: 'Calendar 日历', link: '/components/todo' },
         { text: 'DatetimePicker 时间选择', link: '/components/todo' },
